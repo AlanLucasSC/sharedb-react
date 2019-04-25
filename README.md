@@ -1,1 +1,1 @@
-"# sharedb-react" 
+# sharedb-react
