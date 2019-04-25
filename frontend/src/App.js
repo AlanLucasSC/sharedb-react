@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import Counter from './components/counter'
+//import Counter from './components/counter'
+import TextArea from './components/textarea'
 
 function App() {
   return (
     <div className="App">
-      <Counter/>
+      <TextArea/>
     </div>
   );
 }

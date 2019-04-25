@@ -7,6 +7,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
     "sharedb": "^1.0.0-beta.22",
+    "sharedb-string-binding": "^1.0.0",
     "websocket": "^1.0.28"
   },
   "scripts": {

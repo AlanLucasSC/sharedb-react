@@ -14,11 +14,11 @@ createDoc(startServer);
 // Create initial document then fire callback
 function createDoc(callback) {
   var connection = backend.connect();
-  var doc = connection.get('examples', 'counter');
+  var doc = connection.get('examples', 'textarea');
   doc.fetch(function(err) {
     if (err) throw err;
     if (doc.type === null) {
-      doc.create({numClicks: 0}, callback);
+      doc.create({content: ''}, callback);
       return;
     }
     callback();
