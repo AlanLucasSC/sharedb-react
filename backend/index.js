@@ -2,23 +2,28 @@ var http = require('http');
 var express = require('express');
 var ShareDB = require('sharedb');
 var WebSocket = require('ws');
+var richText = require('rich-text');
 var WebSocketJSONStream = require('websocket-json-stream');
+
 
 var options = {
   disableDocAction: true,
   disableSpaceDelimitedActions: true
 }
+
+ShareDB.types.register(richText.type);
+
 var backend = new ShareDB(options);
 createDoc(startServer);
 
 // Create initial document then fire callback
 function createDoc(callback) {
   var connection = backend.connect();
-  var doc = connection.get('examples', 'textarea');
+  var doc = connection.get('examples', 'richtext');
   doc.fetch(function(err) {
     if (err) throw err;
     if (doc.type === null) {
-      doc.create({content: ''}, callback);
+      doc.create([{insert: ''}], 'rich-text', callback);
       return;
     }
     callback();
@@ -34,10 +39,11 @@ function startServer() {
   // Connect any incoming WebSocket connection to ShareDB
   var wss = new WebSocket.Server({server: server});
   wss.on('connection', function(ws, req) {
+    console.log('conectado')
     var stream = new WebSocketJSONStream(ws);
     backend.listen(stream);
   });
 
   server.listen(8080);
-  console.log('Listening on http://localhost:8080');
+  console.log('Listening on http://172.19.16.126:8080');
 }

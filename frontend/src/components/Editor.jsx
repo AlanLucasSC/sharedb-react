@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import sharedb from 'sharedb/lib/client';
+import ReactQuill, { Quill } from  'react-quill'
 import { w3cwebsocket as W3CWebSocket  } from 'websocket';
-import ReactQuill from 'react-quill';
 import QuillCursors from 'quill-cursors';
 import 'react-quill/dist/quill.snow.css';
 
@@ -38,6 +38,7 @@ class Editor extends Component{
         this.document.subscribe(this.InitEditor)
         this.document.on('op', this.handleUpdate)
         
+        
         this.toolbarOptions = [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
             ['blockquote', 'code-block'],
@@ -66,7 +67,7 @@ class Editor extends Component{
         this.setState({
             quill : this.quillReference.current.getEditor()
         })
-        this.state.quill.register('modules/cursors', QuillCursors)
+        console.log(Quill.register)
     }
 
     InitEditor(err){
@@ -84,9 +85,8 @@ class Editor extends Component{
             <ReactQuill 
                 ref = { this.quillReference }
                 theme="snow"
-                modules= {{
-                    toolbar: this.toolbarOptions,
-                    cursors: true
+                modules = {{
+                    toolbar: this.toolbarOptions
                 }}
                 value= { this.state.text }
                 onChange = {this.handleChange}
