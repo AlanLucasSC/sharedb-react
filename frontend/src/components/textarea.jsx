@@ -9,7 +9,7 @@ export default class TextArea extends Component {
         this.state = {
             clicks: 0
         }
-        var socket = new W3CWebSocket('ws://10.2.24.163:8080')
+        var socket = new W3CWebSocket('ws://localhost:8080')
         var connection = new sharedb.Connection(socket)
         this.document = connection.get('examples', 'textarea');
 
@@ -29,7 +29,9 @@ export default class TextArea extends Component {
 
     render(){
         return (
-            <textarea name="collab-editor" id="collab-editor" cols="30" rows="10"></textarea>
+            <div>
+                <textarea name="collab-editor" id="collab-editor" cols="30" rows="10"></textarea>
+            </div>
         )
     }
 }
