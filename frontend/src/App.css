@@ -1,33 +1,58 @@
-.App {
-  text-align: center;
+body {
+  /*background: #f3f1f2;*/
+  font-family: sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.quill {
+  margin: 1rem 4rem;
+  transition: width 700ms ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.quill .ql-container {
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  background: #fefcfc;
 }
 
-.App-link {
-  color: #61dafb;
+.w-200{
+  width: 200%
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Snow Theme */
+.quill .ql-snow.ql-toolbar {
+  display: block;
+  background: #eaecec;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+/* Bubble Theme */
+.quill .ql-bubble .ql-editor {
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+
+.quill .ql-editor {
+  min-height: 18em;
+}
+
+.themeSwitcher {
+  margin-top: 0.5em;
+  font-size: small;
+}
+
+a, a:hover { 
+  text-decoration: none; 
+  color: inherit;
+} 
+
+ins {
+  text-decoration: none;
+  background-color: #d4fcbc;
+}
+
+del {
+  text-decoration: line-through;
+  background-color: #fbb6c2;
+  color: #555;
 }

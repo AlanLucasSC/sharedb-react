@@ -5,7 +5,6 @@ var WebSocket = require('ws');
 var richText = require('rich-text');
 var WebSocketJSONStream = require('websocket-json-stream');
 
-
 var options = {
   disableDocAction: true,
   disableSpaceDelimitedActions: true
@@ -42,8 +41,11 @@ function startServer() {
     console.log('conectado')
     var stream = new WebSocketJSONStream(ws);
     backend.listen(stream);
+    ws.on('message', (message) => {
+      console.log(message)
+    })
   });
 
   server.listen(8080);
-  console.log('Listening on http://172.19.16.126:8080');
+  console.log('Listening on http://localhost:8080');
 }

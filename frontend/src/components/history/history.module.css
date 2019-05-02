@@ -1,0 +1,15 @@
+.history {
+    transform: translateX(100vw);
+    transition: transform 400ms ease-in;
+    
+    width: 25%;
+    padding: 20px;
+}
+
+#navbar.slideIn {
+    transform: translateX(70%);
+}
+
+#navbar.slideOut {
+    transform: translateX(100vw);
+}
