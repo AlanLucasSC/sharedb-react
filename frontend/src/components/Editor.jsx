@@ -10,7 +10,7 @@ import richText from 'rich-text';
 import Snackbar from './snackbar'
 import History from './history/history'
 
-import { applySaveButton, applyHistoryButton } from './buttonInHtml'
+import { applySaveButton, applyHistoryButton, applyTemplateButton } from './buttonInHtml'
 import { getUserData } from '../utils/document'
 import FirebaseService from '../services/firebaseService'
 
@@ -71,7 +71,7 @@ class Editor extends Component{
             [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
             [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
             [{ 'direction': 'rtl' }],                         // text direction
-  
+
             [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
             [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
             [ 'link', 'image', 'video', 'formula' ],          // add's image support
@@ -79,7 +79,7 @@ class Editor extends Component{
             [{ 'font': [] }],
             [{ 'align': [] }],
 
-            ['save', 'history']
+            ['save', 'history', 'template'],
         ]
     }
 
@@ -113,6 +113,7 @@ class Editor extends Component{
     applyCustomToolbar(quill){
         applySaveButton(this.saveDocument, quill)
         applyHistoryButton(this.openHistory)
+        applyTemplateButton( ()=> console.log('batata') )
     }
 
     componentDidMount(){  
