@@ -15,7 +15,7 @@ export default class History extends Component {
         }
 
         this.getDocument = this.getDocument.bind(this)
-        setInterval(this.getDocument, 3000)
+        setInterval(this.getDocument, 6000)
     }
 
     getDocument = async () => {

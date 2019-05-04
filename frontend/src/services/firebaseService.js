@@ -35,7 +35,7 @@ export default class FirebaseService {
     
     static getTemplates = async () => {
         
-        const pathOfCollectionDocuments = 'templates'
+        const pathOfCollectionDocuments = 'templates-quill'
         const documents = await this.getAllData(pathOfCollectionDocuments)
 
         return documents
@@ -43,7 +43,6 @@ export default class FirebaseService {
 
     static updateDocument = async (idDocument, document, userName) => {
         var pathOfCollectionDocuments = 'documents'
-        console.log(idDocument, document, userName)
         try {
             
             var collectionDocuments = firebaseDatabase.ref(pathOfCollectionDocuments)
