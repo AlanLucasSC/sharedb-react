@@ -1,6 +1,9 @@
 # Sharedb with react
+## Usar o editor
+* Acesse a pasta backend e no terminal faça ``` node index.js ```
+* Acesse a pasta frontend e no terminal faça ``` npm start ```
 
-# Usando múltiplos computadores para acessar o editor
+## Usando múltiplos computadores para acessar o editor
 
 * Altere o arquivo socket.js (frontend/src/utils/socket.js), remova o “localhost” e coloque o ip da maquina que estará hospedando o server (backend/server.js). 
 
