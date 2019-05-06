@@ -8,7 +8,10 @@
 
 * Altere o arquivo Editor.jsx (frontend/src/components/Editor.jsx), remova o “localhost” e coloque o ip da maquina que estará hospedando o server (backend/server.js).
 
+```
     //...
     this.socket  = new W3CWebSocket('ws://localhost:8081') //linha 47
     //...
     this.socket = new W3CWebSocket('ws://localhost:8081'); //linha 57
+    //...
+```
