@@ -121,7 +121,3 @@ function startServer() {
     Listening on http://localhost:${PORT + 1} -> webSocket
   `);
 }
-
-function socketIO(io){
-  
-}
