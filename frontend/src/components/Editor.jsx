@@ -44,7 +44,7 @@ class Editor extends Component{
 
         sharedb.types.register(richText.type)
         
-        this.socket  = new W3CWebSocket('ws://10.2.183.146:8081');
+        this.socket  = new W3CWebSocket('ws://localhost:8081');
 
         this.connection = new sharedb.Connection(this.socket);
         this.document = this.connection.get('examples', 'richtext');
@@ -54,7 +54,7 @@ class Editor extends Component{
         }
 
         window.connect = function(){
-            this.socket = new W3CWebSocket('ws://10.2.183.146:8081');
+            this.socket = new W3CWebSocket('ws://localhost:8081');
             this.connection.bindToSocket(this.socket);
         }
 
