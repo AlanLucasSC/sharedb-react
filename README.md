@@ -1,5 +1,6 @@
 # Sharedb with react
 ## Usar o editor
+* Faça ``` npm install ``` dentro da pasta backend e frontend
 * Acesse a pasta backend e no terminal faça ``` node index.js ```
 * Acesse a pasta frontend e no terminal faça ``` npm start ```
 
